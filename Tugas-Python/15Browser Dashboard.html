@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Monitor</title>
+</head>
+<body>
+
+<h2>Login Smart Monitor</h2>
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+
+<h2 id="status"></h2>
+<h3 id="cpu"></h3>
+<h3 id="suhu"></h3>
+
+<script>
+let ws; // variabel WebSocket global
+
+function login() {
+    const username = document.getElementById("user").value;
+    const password = document.getElementById("pass").value;
+
+    fetch("http://127.0.0.1:5000/login", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({username, password})
+    })
+    .then(res => {
+        if(res.ok) return res.json();
+        else throw new Error("Login gagal");
+    })
+    .then(data => {
+        document.getElementById("status").innerText = "Login Berhasil ✅";
+        startWebSocket();
+    })
+    .catch(err => {
+        document.getElementById("status").innerText = "Login Gagal ❌";
+        console.error(err);
+    });
+}
+
+function startWebSocket() {
+    ws = new WebSocket("ws://127.0.0.1:6789"); // konek ke server WebSocket Python
+
+    ws.onopen = () => console.log("WebSocket connected ✅");
+    ws.onclose = () => console.log("WebSocket disconnected ❌");
+    ws.onerror = (err) => console.error("WebSocket error:", err);
+
+    ws.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+
+        // tampilkan data CPU & suhu
+        if(data.cpu) document.getElementById("cpu").innerText = "CPU Usage: " + data.cpu + "%";
+        if(data.suhu) document.getElementById("suhu").innerText = "Suhu: " + data.suhu + "°C";
+    };
+}
+</script>
+
+</body>
+</html>
+

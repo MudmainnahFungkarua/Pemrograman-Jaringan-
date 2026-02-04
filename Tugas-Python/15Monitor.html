@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Monitor</title>
+  <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+
+<h2>Login Smart Monitor</h2>
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+
+<h2 id="status"></h2>
+<h3 id="cpu"></h3>
+<h3 id="suhu"></h3>
+
+<script>
+function login(){
+  fetch("http://127.0.0.1:5000/login", {
+    method:"POST",
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      username:document.getElementById("user").value,
+      password:document.getElementById("pass").value
+    })
+  }).then(res=>{
+    if(res.ok){
+      document.getElementById("status").innerText="Login Berhasil ✅";
+      startSocket();
+    } else {
+      document.getElementById("status").innerText="Login Gagal ❌";
+    }
+  }).catch(err=>{
+    document.getElementById("status").innerText="Error koneksi!";
+  })
+}
+
+function startSocket(){
+  const socket = new WebSocket("ws://localhost:6789");
+
+  socket.onopen = ()=>console.log("WS Terhubung ✅");
+  socket.onmessage = (event)=>{
+    const data = JSON.parse(event.data);
+    document.getElementById("cpu").innerText = "CPU Usage: "+(data.cpu||0)+"%";
+    document.getElementById("suhu").innerText = "Suhu: "+(data.suhu||0)+"°C";
+  }
+  socket.onclose = ()=>console.log("WS Terputus ❌");
+}
+</script>
+
+</body>
+</html>
