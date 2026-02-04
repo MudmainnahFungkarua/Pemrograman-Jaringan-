@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio dan Website Pribadi Mudmainnah Fungkarua - Mahasiswa Teknik Informatika Universitas Indonesia Timur.">
+    <title>Mudmainnah Fungkarua | Portofolio & Artikel Teknologi</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">Mudmainnah<span>.</span></a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">Profil</a></li>
+                <li><a href="#portfolio">Portofolio</a></li>
+                <li><a href="#blog">Artikel</a></li>
+                <li><a href="#contact" class="btn-primary-sm">Hubungi Saya</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="greeting shimmer-text">Halo, Saya</span>
+                <h1 class="hero-name">Mudmainnah Fungkarua</h1>
+                <p class="hero-description">
+                    Mahasiswa Teknik Informatika yang tertarik pada <span class="highlight">pengembangan web</span>, <span class="highlight">pemrograman</span>, dan <span class="highlight">teknologi informasi</span>.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">Lihat Portofolio <i class="fas fa-arrow-right"></i></a>
+                    <a href="#blog" class="btn btn-secondary">Baca Artikel</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="hero-blob"></div>
+                <!-- Placeholder for Profile Image - Using a generic tech avatar or placeholder if real image not provided -->
+                <div class="hero-img-placeholder">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">Tentang Saya</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Mahasiswa Teknik Informatika @ Universitas Indonesia Timur</h3>
+                    <p>
+                        Saya adalah mahasiswa Fakultas Ilmu Komputer yang memiliki semangat tinggi dalam mempelajari teknologi baru. 
+                        Saya memiliki ketertarikan mendalam pada dunia pemrograman, khususnya pengembangan web dan jaringan komputer.
+                    </p>
+                    
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h4>Hard Skills</h4>
+                            <div class="tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>C++</span>
+                                <span>Python</span>
+                                <span>Jaringan Komputer</span>
+                                <span>Database</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Soft Skills</h4>
+                            <div class="tags">
+                                <span>Teamwork</span>
+                                <span>Problem Solving</span>
+                                <span>Adaptif</span>
+                                <span>Bertanggung Jawab</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio">
+        <div class="container">
+            <h2 class="section-title">Portofolio Saya</h2>
+            <p class="section-subtitle">Beberapa proyek dan hasil belajar yang telah saya kerjakan.</p>
+            
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-img c-plus-plus"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Sistem Reservasi Hotel</h3>
+                        <p>Aplikasi berbasis teks menggunakan C++ untuk pengelolaan pemesanan kamar hotel sederhana.</p>
+                        <div class="tech-stack">
+                            <span>C++</span>
+                            <span>Algorithm</span>
+                        </div>
+                        <a href="#" class="btn-link">Detail Proyek <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-img web-dev"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Landing Page Pribadi</h3>
+                        <p>Website portofolio responsif yang dibangun dengan HTML, CSS modern, dan JavaScript.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JS</span>
+                        </div>
+                        <a href="#" class="btn-link">Lihat Live <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-img networking"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Program Client-Server</h3>
+                        <p>Implementasi komunikasi jaringan sederhana antara client dan server.</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Socket Programming</span>
+                        </div>
+                        <a href="#" class="btn-link">Lihat Kode <i class="fab fa-github"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/Articles Section -->
+    <section id="blog" class="section blog">
+        <div class="container">
+            <h2 class="section-title">Artikel & Tulisan</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-meta">Tutorial • 5 Menit Baca</div>
+                        <h3><a href="#">Dasar HTML dan CSS untuk Pemula</a></h3>
+                        <p>Panduan awal bagi siapa saja yang ingin memulai karir sebagai web developer.</p>
+                        <a href="#" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-meta">Experience • 7 Menit Baca</div>
+                        <h3><a href="#">Pengalaman Belajar Pemrograman Jaringan</a></h3>
+                        <p>Tantangan dan keseruan saat mempelajari bagaimana data dikirim melalui jaringan.</p>
+                        <a href="#" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-meta">Opini • 4 Menit Baca</div>
+                        <h3><a href="#">Kenapa Mahasiswa IT Perlu Portofolio?</a></h3>
+                        <p>Pentingnya membangun personal branding sejak dini di bangku perkuliahan.</p>
+                        <a href="#" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2 class="section-title">Hubungi Saya</h2>
+                    <p>Tertarik berkolaborasi atau punya pertanyaan? Jangan ragu untuk mengirimkan pesan.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span class="label">Email</span>
+                                <a href="mailto:mudmainnahfungkaruaa@gmail.com" class="val">mudmainnahfungkaruaa@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span class="label">Lokasi</span>
+                                <span class="val">Makassar, Indonesia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nama</label>
+                        <input type="text" id="name" name="name" required placeholder="Nama Anda">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="email@contoh.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tulis pesan Anda disini..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <p>&copy; 2024 Mudmainnah Fungkarua. All rights reserved.</p>
+            <p class="tech-credit">Dibuat dengan HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
